@@ -44,8 +44,7 @@ command -v msfvenom > /dev/null 2>&1 || { echo >&2 "I require MSFVenom but it's 
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
 command -v ssh > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed. Install it. Aborting."; 
 exit 1; }
-command -v nc > /dev/null 2>&1 || { echo >&2 "I require Netcat but it's not installed. Install it. Aborting."; 
-exit 1; }
+
 
 }
 server() {
