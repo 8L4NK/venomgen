@@ -35,6 +35,19 @@ fi
 
 lhost="159.89.214.31"
 format=""
+
+
+dependencies() {
+
+command -v msfconsole > /dev/null 2>&1 || { echo >&2 "I require Metasploit but it's not installed. Install it. Aborting."; exit 1; }
+command -v msfvenom > /dev/null 2>&1 || { echo >&2 "I require MSFVenom but it's not installed. Install it. Aborting."; exit 1; }
+command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
+command -v ssh > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed. Install it. Aborting."; 
+exit 1; }
+command -v nc > /dev/null 2>&1 || { echo >&2 "I require Netcat but it's not installed. Install it. Aborting."; 
+exit 1; }
+
+}
 server() {
 chmod +x $payload_name*
 printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Starting server...\e[0m\n"
@@ -427,5 +440,6 @@ else
 printf "\e[1;93m[\e[1;77m!\e[0m\e[1;93m] Invalid option!\e[0m"
 fi
 }
+dependencies
 menu
 
